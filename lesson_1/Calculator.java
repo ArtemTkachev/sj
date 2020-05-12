@@ -4,31 +4,26 @@ public class Calculator {
 		float secondNum = 3;
 		float result = 0;
 		char oper = '^';
-		if (oper == '+') {
+		if(oper == '+') {
 			result = firstNum + secondNum;
-		}
-		if (oper == '-') {
+		} else if(oper == '-') {
 			result = firstNum - secondNum;
-		}
-		if (oper == '/') {
-			if (secondNum != 0) {
+		} else if(oper == '/') {
+			if(secondNum != 0) {
 				result = firstNum / secondNum;
 			} else {
 				System.out.println("You can't divide by zero!");
 			}
-		}
-		if (oper == '*') {
+		} else if(oper == '*') {
 			result = firstNum * secondNum;
-		}
-		if (oper == '%') {
-			if (secondNum != 0) {
+		} else if(oper == '%') {
+			if(secondNum != 0) {
 				result = firstNum % secondNum;
 			} else {
 				System.out.println("You can't divide by zero!");
 			}
-		}
-		if (oper == '^') {
-			if (firstNum != 0) {
+		} else if(oper == '^') {
+			if(firstNum != 0) {
 				result = 1;
 			} 
 			for(int i = 0; i < secondNum; i++) {
