@@ -3,29 +3,28 @@ public class Calculator {
 		float firstNum = 8;
 		float secondNum = 3;
 		float result = 0;
-		char oper = '^';
-		if(oper == '+') {
+		char operation = '^';
+
+		if(operation == '+') {
 			result = firstNum + secondNum;
-		} else if(oper == '-') {
+		} else if(operation == '-') {
 			result = firstNum - secondNum;
-		} else if(oper == '/') {
+		} else if(operation == '/') {
 			if(secondNum != 0) {
 				result = firstNum / secondNum;
 			} else {
 				System.out.println("You can't divide by zero!");
 			}
-		} else if(oper == '*') {
+		} else if(operation == '*') {
 			result = firstNum * secondNum;
-		} else if(oper == '%') {
+		} else if(operation == '%') {
 			if(secondNum != 0) {
 				result = firstNum % secondNum;
 			} else {
 				System.out.println("You can't divide by zero!");
 			}
-		} else if(oper == '^') {
-			if(firstNum != 0) {
-				result = 1;
-			} 
+		} else if(operation == '^') {
+			result = 1;
 			for(int i = 0; i < secondNum; i++) {
 				result = result * firstNum;
 			}

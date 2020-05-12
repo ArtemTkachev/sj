@@ -1,22 +1,22 @@
 public class Variable {
 	public static void main(String[] args) {
-	byte numOfCPUCores = 4;
-	short freqCPUMHz = 3200;
-	int priceCPURub = 10000;
-	long priceNewCPURub = 15000;
-	float exactPriceCPURub = 10500.50f;
-	double exactPriceNewCPURub = 15600.60;
-	char firstLOfCPU = 'I';
-	boolean IsaGoodCPU = true;
+	byte numOfCpuCores = 4;
+	short freqCpuMhz = 3200;
+	int priceCpuRub = 10000;
+	long priceNewCpuRub = 15000;
+	float exactPriceCpuRub = 10500.50f;
+	double exactPriceNewCpuRub = 15600.60;
+	char firstLOfCpu = 'I';
+	boolean isGoodCPU = true;
 
 	System.out.println(
-		"Кол-во ядер: " + numOfCPUCores + 
-		"\nЧастота проц-ра: " + freqCPUMHz +
-		"\nЦена на проц-ор: " + priceCPURub + 
-		"\nЦена на новый проц-ор: " + priceNewCPURub +
-		"\nТочная цена на проц-ор: " + exactPriceCPURub +
-		"\nТочная цена на новый проц-ор: " + exactPriceNewCPURub +
-		"\nПервая буква названия проц-ра: " + firstLOfCPU +
-		"\nХороший ли процессор?: " + IsaGoodCPU);
+		"Кол-во ядер: " + numOfCpuCores + 
+		"\nЧастота проц-ра: " + freqCpuMhz +
+		"\nЦена на проц-ор: " + priceCpuRub + 
+		"\nЦена на новый проц-ор: " + priceNewCpuRub +
+		"\nТочная цена на проц-ор: " + exactPriceCpuRub +
+		"\nТочная цена на новый проц-ор: " + exactPriceNewCpuRub +
+		"\nПервая буква названия проц-ра: " + firstLOfCpu +
+		"\nХороший ли процессор?: " + isGoodCPU);
 	}
 }

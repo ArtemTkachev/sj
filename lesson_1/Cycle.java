@@ -7,17 +7,18 @@ public class Cycle {
 		int y = 6;
 		while(y >= -6) {
 			System.out.println(y);
-			y = y - 2;
+			y -= 2;
 		}
 
 		int z = 10;
 		int res = 0;
 		do {
 			if(z % 2 != 0) {
-				res = res + z;
+				res += z;
 			}
 			z++;
 		} while(z <= 20);
+
 		System.out.println(res);
 	}
 }
