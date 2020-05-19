@@ -3,17 +3,17 @@ public class WolfTest {
 	public static void main(String[] args) {
 		Wolf localWolf = new Wolf();
 
-		localWolf.gender = 'm';
-		localWolf.age = 5;
-		localWolf.weight = 50;
-		localWolf.nickname = "Bobo";
-		localWolf.color = "gray";
+		localWolf.setGender('m');
+		localWolf.setAge(5);
+		localWolf.setWeight(50);
+		localWolf.setNickname("Bobo");
+		localWolf.setColor("Gray");
 
-		System.out.println("Gender: " + localWolf.gender +
-						   "\nAge: " + localWolf.age +
-						   "\nWeight: " + localWolf.weight +
-						   "\nNickname: " + localWolf.nickname +
-						   "\nColor: " + localWolf.color);
+		System.out.println("Gender: " + localWolf.getGender() +
+						   "\nAge: " + localWolf.getAge() +
+						   "\nWeight: " + localWolf.getWeight() +
+						   "\nNickname: " + localWolf.getNickname() +
+						   "\nColor: " + localWolf.getColor());
 
 		localWolf.go();
 		localWolf.sit();
