@@ -1,9 +1,10 @@
 public class JaegerTest {
 
 	public static void main(String[] args) {
+		Jaeger jaegerGipsyDanger = new Jaeger("Gipsy Danger", 
+			"Mark-3", "USA", 79.25f, 1.98f, 7, 8, 6);
 
-		Jaeger jaegerGipsyDanger = new Jaeger();
-
+/*
 		jaegerGipsyDanger.setModelName("Gipsy Danger");
 		jaegerGipsyDanger.setMark("Mark-3");
 		jaegerGipsyDanger.setOrigin("USA");
@@ -12,6 +13,7 @@ public class JaegerTest {
 		jaegerGipsyDanger.setSpeed(7);
 		jaegerGipsyDanger.setStrength(8);
 		jaegerGipsyDanger.setArmor(6);
+*/
 
 		System.out.println("ModelName: " + jaegerGipsyDanger.getModelName() +
 						   "\nMark: " + jaegerGipsyDanger.getMark() +
@@ -30,8 +32,10 @@ public class JaegerTest {
 		jaegerGipsyDanger.useWeapon();
 
 
-		Jaeger jaegerCoyoteTango = new Jaeger();
+		Jaeger jaegerCoyoteTango = new Jaeger("Coyote Tango", 
+			"Mark-1", "Japan", 85.34f, 2.312f, 5, 7, 4);
 
+/*
 		jaegerCoyoteTango.setModelName("Coyote Tango");
 		jaegerCoyoteTango.setMark("Mark-1");
 		jaegerCoyoteTango.setOrigin("Japan");
@@ -40,6 +44,7 @@ public class JaegerTest {
 		jaegerCoyoteTango.setSpeed(5);
 		jaegerCoyoteTango.setStrength(7);
 		jaegerCoyoteTango.setArmor(4);
+*/
 
 		System.out.println("ModelName: " + jaegerCoyoteTango.getModelName() +
 						   "\nMark: " + jaegerCoyoteTango.getMark() +
@@ -56,6 +61,5 @@ public class JaegerTest {
 		String scanJaegerCoyoteTango = jaegerCoyoteTango.scanKaiju();
 		System.out.println(scanJaegerCoyoteTango);
 		jaegerCoyoteTango.useWeapon();
-		
 	}
 }
