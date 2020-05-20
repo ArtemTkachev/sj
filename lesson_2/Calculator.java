@@ -1,18 +1,21 @@
 public class Calculator {
 
-	/*
 	private char signOper;
 
 	public char getSignOper() {
 		return signOper;
 	}
 
-	public void setSignOper(char signOper) {
-		this.signOper = signOper;
+	public boolean setSignOper(char signOper) {
+		if(signOper == '+' || signOper == '-' || signOper == '*' || 
+			signOper == '/' || signOper == '%' || signOper == '^') {
+			this.signOper = signOper;
+			return true;
+		}
+		return false;
 	}
-	*/
-
-	public float resultOper(float firstNum, float secondNum, char signOper) {
+	
+	public float calculate(float firstNum, float secondNum, char signOper) {
 		float result = 0f;
 		switch(signOper) {
 			case '+': 
@@ -37,7 +40,10 @@ public class Calculator {
 				}
 				break;
 			default: 
-				result = -1f;
+			/*
+				System.out.println("Знак математической операции некорректен!");
+				result = -1.5f;
+			*/
 				break;
 		}
 		return result;

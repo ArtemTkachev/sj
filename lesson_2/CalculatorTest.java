@@ -6,21 +6,28 @@ public class CalculatorTest {
 		Calculator calc = new Calculator();
 		Scanner scan = new Scanner(System.in);
 		String answer = "yes";
+		boolean correctSign;
 
 		while(answer.equals("yes")) {
 			System.out.println("Введите первое число: ");
 			int firstNum = scan.nextInt();
-			System.out.println("Введите знак математической операции: ");
-			char signOper = scan.next().charAt(0);
+			do {
+				System.out.println("Введите знак математической операции [+/-/*///%/^]: ");
+				if(!calc.setSignOper(scan.next().charAt(0))) {
+					System.out.println("Знак математической операции некорректен!");
+					correctSign = false;
+				} else {
+					correctSign = true;
+				}
+			} while(!correctSign);
+			//char signOper = scan.next().charAt(0);
 			System.out.println("Введите второе число: ");
 			int secondNum = scan.nextInt();
 
-			float result = calc.resultOper((float)firstNum, (float)secondNum, signOper);
-			if(result == -1) {
-				System.out.println("Знак математической операции некорректен!");
-			} else {
-				System.out.println("Результат вычисления: " + result);
-			}
+			float result = calc.calculate((float)firstNum, (float)secondNum, calc.getSignOper());
+			//if(result != -1) {
+			System.out.println("Результат вычисления: " + result);
+			//}
 
 			do {
 				System.out.println("Хотите продолжить? [yes/no]: ");
