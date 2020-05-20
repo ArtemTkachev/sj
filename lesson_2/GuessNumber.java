@@ -15,13 +15,12 @@ public class GuessNumber {
 
 		while(resumeAnswer.equals("yes")) {
 			randomNumber = (int) (Math.random() * 101);
-
-			System.out.println(randomNumber);
-
+		//	System.out.println(randomNumber);
 			System.out.println("Компьютер загадал число от 0 до 100");
 			System.out.println("Игрок " + firstPlayer.getName() + ", введите число: ");
 			firstPlayer.setNumber(scan.nextInt());
 			System.out.println("Игрок " + secondPlayer.getName() + ", введите число: ");
+			
 			do {
 				secondPlayer.setNumber(scan.nextInt());
 				if(firstPlayer.getNumber() == secondPlayer.getNumber()) {
