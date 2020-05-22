@@ -1,6 +1,24 @@
 public class Calculator {
 
+	private int firstNum;
+	private int secondNum;
 	private char signOper;
+
+	public int getFirstNum() {
+		return firstNum;
+	}
+
+	public void setFirstNum(int firstNum) {
+		this.firstNum = firstNum;
+	}
+
+	public int getSecondNum() {
+		return secondNum;
+	}
+
+	public void setSecondNum(int secondNum) {
+		this.secondNum = secondNum;
+	}
 
 	public char getSignOper() {
 		return signOper;
@@ -15,7 +33,7 @@ public class Calculator {
 		return false;
 	}
 	
-	public float calculate(float firstNum, float secondNum, char signOper) {
+	public float calculate() {
 		float result = 0f;
 		switch(signOper) {
 			case '+': 
@@ -38,12 +56,6 @@ public class Calculator {
 				for(int i = 0; i < secondNum; i++) {
 					result *= firstNum;
 				}
-				break;
-			default: 
-			/*
-				System.out.println("Знак математической операции некорректен!");
-				result = -1.5f;
-			*/
 				break;
 		}
 		return result;
