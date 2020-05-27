@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.game;
+
 public class GuessNum {
 	public static void main(String[] args) {
 		int guessNum = 47;
