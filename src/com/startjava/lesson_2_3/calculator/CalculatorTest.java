@@ -1,41 +1,43 @@
 package com.startjava.lesson_2_3.calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorTest {
 
-	public static void main(String[] args) {
-		Calculator calc = new Calculator();
-		Scanner scan = new Scanner(System.in);
-		String answer = "yes";
-		boolean correctSign = false;
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        Scanner scan = new Scanner(System.in);
+        String answer = "yes";
+        boolean correctSign = false;
+        String mathExpres = "";
+        String[] mathExpresJoins = new String[3];
 
-		while(answer.equals("yes")) {
-			System.out.println("Введите первое число: ");
-			calc.setFirstNum(scan.nextInt());
-			do {
-				System.out.println("Введите знак математической операции [+/-/*///%/^]: ");
-				if(!calc.setSignOper(scan.next().charAt(0))) {
+        while (answer.equals("yes")) {
+            do {
+                System.out.print("Введите математическое выражение: ");
+				mathExpres = scan.nextLine();
+				mathExpresJoins = mathExpres.split(" ");
+
+                calc.setFirstNum(Integer.parseInt(mathExpresJoins[0]));
+                calc.setSecondNum(Integer.parseInt(mathExpresJoins[2]));
+
+                if(!calc.setSignOper(mathExpresJoins[1].charAt(0))) {
 					System.out.println("Знак математической операции некорректен!");
-					//correctSign = false;
-				} else {
-					break;
-					//correctSign = true;
+                } else {
+                	break;
 				}
-			} while(!correctSign);
-			//char signOper = scan.next().charAt(0);
-			System.out.println("Введите второе число: ");
-			calc.setSecondNum(scan.nextInt());
+            } while (!correctSign);
 
-			float result = calc.calculate();
-			//if(result != -1) {
-			System.out.println("Результат вычисления: " + result);
-			//}
 
-			do {
-				System.out.println("Хотите продолжить? [yes/no]: ");
-				answer = scan.next();
-			} while(!answer.equals("yes") && !answer.equals("no"));
-		}
-	}
+            double result = calc.calculate();
+
+            System.out.println("Результат вычисления: " + result);
+
+            do {
+                System.out.print("Хотите продолжить? [yes/no]: ");
+                answer = scan.nextLine();
+            } while (!answer.equals("yes") && !answer.equals("no"));
+        }
+    }
 }
