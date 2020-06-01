@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3.calculator;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorTest {
@@ -10,23 +9,23 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         String answer = "yes";
         boolean correctSign = false;
-        String mathExpres = "";
-        String[] mathExpresJoins = new String[3];
+        String mathExpres;
+        String[] mathExpresJoins;
 
         while (answer.equals("yes")) {
             do {
                 System.out.print("Введите математическое выражение: ");
-				mathExpres = scan.nextLine();
-				mathExpresJoins = mathExpres.split(" ");
+                mathExpres = scan.nextLine();
+                mathExpresJoins = mathExpres.split(" ");
 
                 calc.setFirstNum(Integer.parseInt(mathExpresJoins[0]));
                 calc.setSecondNum(Integer.parseInt(mathExpresJoins[2]));
 
-                if(!calc.setSignOper(mathExpresJoins[1].charAt(0))) {
-					System.out.println("Знак математической операции некорректен!");
+                if (!calc.setSignOper(mathExpresJoins[1].charAt(0))) {
+                    System.out.println("Знак математической операции некорректен!");
                 } else {
-                	break;
-				}
+                    break;
+                }
             } while (!correctSign);
 
 
