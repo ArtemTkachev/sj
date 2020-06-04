@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -9,19 +9,19 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         String answer = "yes";
         boolean correctSign = false;
-        String mathExpres;
-        String[] mathExpresJoins;
+        String srcMathExpres;
+        String[] SplitMathExpres;
 
         while (answer.equals("yes")) {
             do {
                 System.out.print("Введите математическое выражение: ");
-                mathExpres = scan.nextLine();
-                mathExpresJoins = mathExpres.split(" ");
+                srcMathExpres = scan.nextLine();
+                SplitMathExpres = srcMathExpres.split(" ");
 
-                calc.setFirstNum(Integer.parseInt(mathExpresJoins[0]));
-                calc.setSecondNum(Integer.parseInt(mathExpresJoins[2]));
+                calc.setFirstNum(Integer.parseInt(SplitMathExpres[0]));
+                calc.setSecondNum(Integer.parseInt(SplitMathExpres[2]));
 
-                if (!calc.setSignOper(mathExpresJoins[1].charAt(0))) {
+                if (!calc.setSignOper(SplitMathExpres[1].charAt(0))) {
                     System.out.println("Знак математической операции некорректен!");
                 } else {
                     break;
