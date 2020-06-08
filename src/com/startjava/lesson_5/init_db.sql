@@ -9,4 +9,4 @@ INSERT INTO jaegers (modelName, mark, origin, status, height, weight, launched, 
 	('GipsyDanger8','Mark-5','USA','destroyed','69.69','1.69','2018-12-25','5'),
 	('GipsyDanger9','Mark-1','USA','destroyed','70.88','1.98','2015-03-15','15'),
 	('GipsyDanger10','Mark-1','USA','destroyed','69.15','2.89','2015-01-10','0');
-
+\q
