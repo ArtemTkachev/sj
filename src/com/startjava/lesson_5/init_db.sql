@@ -1,3 +1,4 @@
+\c jaegers;
 INSERT INTO jaegers (modelName, mark, origin, status, height, weight, launched, kaijuKilled) VALUES
 	('GipsyDanger1','Mark-3','USA','destroyed','79.25','1.98','2017-07-10','9'),
 	('GipsyDanger2','Mark-5','Japan','functioning','75.20','2.50','2019-07-15','25'),

@@ -1,3 +1,4 @@
+\c jaegers;
 SELECT * FROM jaegers;
 SElECT * FROM jaegers WHERE status != 'destroyed';
 SELECT * FROM jaegers WHERE mark in ('Mark-1', 'Mark-6');
