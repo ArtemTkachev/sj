@@ -22,7 +22,7 @@ public class Player {
 		return Arrays.copyOf(numbers, quantity);
 	}
 
-	public void setEmptyValues(int toIndex) {
+	public void clear(int toIndex) {
 		Arrays.fill(numbers, 0, toIndex, 0);
 	}
 }
