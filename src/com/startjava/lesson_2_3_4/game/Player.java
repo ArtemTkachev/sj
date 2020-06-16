@@ -15,12 +15,14 @@ public class Player {
 	}
 
 	public void setNumber(int index, int number) {
-		this.numbers[index] = number;
+		numbers[index] = number;
 	}
 
 	public int[] getNumbers(int quantity) {
 		return Arrays.copyOf(numbers, quantity);
 	}
+
+	public int getNumber(int index) { return numbers[index];}
 
 	public void clear(int toIndex) {
 		Arrays.fill(numbers, 0, toIndex, 0);

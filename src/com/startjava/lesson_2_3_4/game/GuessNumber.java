@@ -1,12 +1,12 @@
 package com.startjava.lesson_2_3_4.game;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
     private Player firstPlayer;
     private Player secondPlayer;
+    private Scanner scan = new Scanner(System.in);
 
     public GuessNumber(Player firstPlayer, Player secondPlayer) {
         this.firstPlayer = firstPlayer;
@@ -14,7 +14,6 @@ public class GuessNumber {
     }
 
     public void play() {
-        Scanner scan = new Scanner(System.in);
         int randomNumber = (int) (Math.random() * 101);
         int firstNum, secondNum;
         System.out.println(randomNumber);
@@ -22,12 +21,15 @@ public class GuessNumber {
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Попытка №" + (i + 1));
-            firstNum = InputNumber(firstPlayer.getName(), scan);
-            firstPlayer.setNumber(i, firstNum);
-            secondNum = controlSecNum(firstNum, scan);
-            secondPlayer.setNumber(i, secondNum);
+            inputNumber(firstPlayer, i);
+            checkNumRepeat(i);
 
-           if (outResultPlayer(randomNumber, firstNum, secondNum, i + 1)) {
+           if (getMatchNumsResult(randomNumber, firstPlayer, i) ||
+                   getMatchNumsResult(randomNumber, secondPlayer, i) ||
+                        i == 9) {
+               if (i == 9) {
+                   System.out.println("У вас закончились попытки! Число: " + randomNumber);
+               }
                showAttempts(i + 1, firstPlayer);
                showAttempts(i + 1, secondPlayer);
                firstPlayer.clear(i + 1);
@@ -37,45 +39,27 @@ public class GuessNumber {
         }
     }
 
-    private int InputNumber(String playerName, Scanner scan) {
-        System.out.println("Игрок " + playerName + ", введите число: ");
-        return scan.nextInt();
+    private void inputNumber(Player player, int index) {
+        System.out.println("Игрок " + player.getName() + ", введите число: ");
+        player.setNumber(index, scan.nextInt());
     }
 
-    private int controlSecNum(int firstNum, Scanner scan) {
-        int secondNum;
+    private void checkNumRepeat(int index) {
         do {
-            secondNum = InputNumber(secondPlayer.getName(), scan);
-            if (firstNum == secondNum) {
+            inputNumber(secondPlayer, index);
+            if (firstPlayer.getNumber(index) == secondPlayer.getNumber(index)) {
                 System.out.println("Введенное число совпадает с числом первого игрока.");
             }
-        } while (firstNum == secondNum);
-        return secondNum;
+        } while (firstPlayer.getNumber(index) == secondPlayer.getNumber(index));
     }
 
-    private boolean outResultPlayer(int randomNum, int firstPlayerNum, int secondPlayerNum, int attempt) {
-        boolean outResult = true;
-        boolean playerWinResult = true;
-        Player winPlayer = null;
-        if (randomNum == firstPlayerNum) {
-            winPlayer = firstPlayer;
-        } else if (randomNum == secondPlayerNum) {
-            winPlayer = secondPlayer;
-        } else if (attempt == 10) {
-            System.out.println("У вас закончились попытки! Число: " + randomNum);
-            playerWinResult = false;
-        } else {
-            outResult = false;
-            playerWinResult = false;
+    private boolean getMatchNumsResult(int randomNum, Player player, int index) {
+        boolean playerWinResult = false;
+        if (randomNum == player.getNumber(index)) {
+            System.out.println("Игрок " + player.getName() + ", вы угадали число c " + (index + 1) + " попытки!");
+            playerWinResult = true;
         }
-        if (playerWinResult) {
-            outResultWin(winPlayer, attempt);
-        }
-        return outResult;
-    }
-
-    private void outResultWin(Player player, int attempt) {
-        System.out.println("Игрок " + player.getName() + ", вы угадали число c " + attempt + " попытки!");
+        return playerWinResult;
     }
 
     private void showAttempts(int countNum, Player player) {
