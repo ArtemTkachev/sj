@@ -15,7 +15,6 @@ public class GuessNumber {
 
     public void play() {
         int randomNumber = (int) (Math.random() * 101);
-        int firstNum, secondNum;
         System.out.println(randomNumber);
         System.out.println("Компьютер загадал число от 0 до 100. У вас 10 попыток, чтобы отгадать его.");
 
@@ -24,7 +23,7 @@ public class GuessNumber {
             inputNumber(firstPlayer, i);
             checkNumRepeat(i);
 
-           if (getMatchNumsResult(randomNumber, firstPlayer, i) ||
+            if (getMatchNumsResult(randomNumber, firstPlayer, i) ||
                    getMatchNumsResult(randomNumber, secondPlayer, i) ||
                         i == 9) {
                if (i == 9) {
