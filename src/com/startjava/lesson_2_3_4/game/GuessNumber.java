@@ -23,8 +23,8 @@ public class GuessNumber {
             inputNumber(firstPlayer, i);
             checkNumRepeat(i);
 
-            if (getMatchNumsResult(randomNumber, firstPlayer, i) ||
-                   getMatchNumsResult(randomNumber, secondPlayer, i) ||
+            if (compareNumbers(randomNumber, firstPlayer, i) ||
+                    compareNumbers(randomNumber, secondPlayer, i) ||
                         i == 9) {
                if (i == 9) {
                    System.out.println("У вас закончились попытки! Число: " + randomNumber);
@@ -52,17 +52,16 @@ public class GuessNumber {
         } while (firstPlayer.getNumber(index) == secondPlayer.getNumber(index));
     }
 
-    private boolean getMatchNumsResult(int randomNum, Player player, int index) {
-        boolean playerWinResult = false;
+    private boolean compareNumbers(int randomNum, Player player, int index) {
+        boolean isWin = false;
         if (randomNum == player.getNumber(index)) {
             System.out.println("Игрок " + player.getName() + ", вы угадали число c " + (index + 1) + " попытки!");
-            playerWinResult = true;
+            isWin = true;
         }
-        return playerWinResult;
+        return isWin;
     }
 
     private void showAttempts(int countNum, Player player) {
             System.out.println("Игрок " + player.getName() + " ввел следующие числа: " + Arrays.toString(player.getNumbers(countNum)));
     }
-
 }

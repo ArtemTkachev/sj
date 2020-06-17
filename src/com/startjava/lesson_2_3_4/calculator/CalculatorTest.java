@@ -9,14 +9,14 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         String answer = "yes";
         boolean correctSign = false;
-        String srcMathExpres;
+        String srcMathExp;
         String[] SplitMathExpres;
 
         while (answer.equals("yes")) {
             do {
                 System.out.print("Введите математическое выражение: ");
-                srcMathExpres = scan.nextLine();
-                SplitMathExpres = srcMathExpres.split(" ");
+                srcMathExp = scan.nextLine();
+                SplitMathExpres = srcMathExp.split(" ");
 
                 calc.setFirstNum(Integer.parseInt(SplitMathExpres[0]));
                 calc.setSecondNum(Integer.parseInt(SplitMathExpres[2]));
@@ -28,10 +28,7 @@ public class CalculatorTest {
                 }
             } while (!correctSign);
 
-
-            double result = calc.calculate();
-
-            System.out.println("Результат вычисления: " + result);
+            System.out.println("Результат вычисления: " + calc.calculate());
 
             do {
                 System.out.print("Хотите продолжить? [yes/no]: ");

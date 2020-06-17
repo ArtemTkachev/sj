@@ -18,13 +18,15 @@ public class Player {
 		numbers[index] = number;
 	}
 
+	public int getNumber(int index) {
+		return numbers[index];
+	}
+
 	public int[] getNumbers(int quantity) {
 		return Arrays.copyOf(numbers, quantity);
 	}
 
-	public int getNumber(int index) { return numbers[index];}
-
-	public void clear(int toIndex) {
-		Arrays.fill(numbers, 0, toIndex, 0);
+	public void clear(int index) {
+		Arrays.fill(numbers, 0, index, 0);
 	}
 }

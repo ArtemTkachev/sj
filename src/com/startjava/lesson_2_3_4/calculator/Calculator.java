@@ -6,7 +6,7 @@ public class Calculator {
     private char signOper;
     private final char[] signs = {'+', '-', '*', '/', '%', '^'};
 
-    public char getSignsElementsByIndex(int ind) {
+    public char getSign(int ind) {
         return signs[ind];
     }
 
@@ -29,22 +29,19 @@ public class Calculator {
     }
 
     public double calculate() {
-        double result = 0;
-
-        if (signOper == getSignsElementsByIndex(0)) {
-            result = Math.addExact(firstNum, secondNum);
-        } else if (signOper == getSignsElementsByIndex(1)) {
-            result = Math.subtractExact(firstNum, secondNum);
-        } else if (signOper == getSignsElementsByIndex(2)) {
-            result = Math.multiplyExact(firstNum, secondNum);
-        } else if (signOper == getSignsElementsByIndex(3)) {
-            result = (double) firstNum / (double) secondNum;
-        } else if (signOper == getSignsElementsByIndex(4)) {
-            result = firstNum % secondNum;
-        } else if (signOper == getSignsElementsByIndex(5)) {
-            result = Math.pow(firstNum, secondNum);
+        if (signOper == getSign(0)) {
+            return Math.addExact(firstNum, secondNum);
+        } else if (signOper == getSign(1)) {
+            return Math.subtractExact(firstNum, secondNum);
+        } else if (signOper == getSign(2)) {
+            return Math.multiplyExact(firstNum, secondNum);
+        } else if (signOper == getSign(3)) {
+            return (double) firstNum / (double) secondNum;
+        } else if (signOper == getSign(4)) {
+            return firstNum % secondNum;
+        } else if (signOper == getSign(5)) {
+            return Math.pow(firstNum, secondNum);
         }
-
-        return result;
+        return 0;
     }
 }
