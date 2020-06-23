@@ -8,25 +8,24 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
         String answer = "yes";
-        boolean correctSign = false;
         String srcMathExp;
-        String[] SplitMathExpres;
+        String[] splitMathExpres;
 
         while (answer.equals("yes")) {
             do {
                 System.out.print("Введите математическое выражение: ");
                 srcMathExp = scan.nextLine();
-                SplitMathExpres = srcMathExp.split(" ");
+                splitMathExpres = srcMathExp.split(" ");
 
-                calc.setFirstNum(Integer.parseInt(SplitMathExpres[0]));
-                calc.setSecondNum(Integer.parseInt(SplitMathExpres[2]));
+                calc.setFirstNum(Integer.parseInt(splitMathExpres[0]));
+                calc.setSecondNum(Integer.parseInt(splitMathExpres[2]));
 
-                if (!calc.setSignOper(SplitMathExpres[1].charAt(0))) {
+                if (!calc.setSignOper(splitMathExpres[1].charAt(0))) {
                     System.out.println("Знак математической операции некорректен!");
                 } else {
                     break;
                 }
-            } while (!correctSign);
+            } while (true);
 
             System.out.println("Результат вычисления: " + calc.calculate());
 
